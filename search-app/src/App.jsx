@@ -4,16 +4,12 @@ import SearchResults from './components/SearchResults';
 import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0);
   const [queryString, setQueryString] = useState('');
   const [results, setResults] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  console.log('resutls: ' , results);
-
   const searchQuery = () => {
-    console.log('searchQuery...: ', queryString);
     setIsLoading(true);
     setError(null);
     // API request here 
@@ -24,7 +20,7 @@ function App() {
           setResults(result);
         })
         .catch((error) => {
-          console.log('error: ', error);
+          console.error('error: ', error);
           setError(error);
         })
         .finally(() => setIsLoading(false));

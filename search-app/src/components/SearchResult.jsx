@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import './searchResult.css';
 
 function SearchResult( {result} ) {
-  console.log('serach : ', result);
   if (!result) return null;
   return (
     <div className='search-result-container'>

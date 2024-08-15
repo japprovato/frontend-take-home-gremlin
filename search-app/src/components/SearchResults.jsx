@@ -4,7 +4,6 @@ import SearchResult from './SearchResult';
 import './searchResults.css';
 
 function SearchResults( {results} ) {
-  console.log('serach results: ', results);
   if (!results || results.length === 0) return null;
   return (
     <div className='search-results-container'>
