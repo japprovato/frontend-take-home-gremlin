@@ -7,7 +7,20 @@ function SearchBar({setQueryString, searchQuery}) {
 
   return (
     <div className="search-bar-container">
-      <input className="search-bar" value={value} placeholder="Search packages" onChange={(e) => { setQueryString(e.target.value); setValue(e.target.value)}} type="text"></input>
+      <input 
+        className="search-bar" 
+        value={value} 
+        placeholder="Search packages" 
+        onChange={(e) => { 
+          setQueryString(e.target.value); 
+          setValue(e.target.value);
+        }}
+        onKeyUp={event => { 
+          if (event.key === 'Enter') { 
+            searchQuery();
+          }
+        }} 
+        type="text"></input>
       <button className="search-button" onClick={searchQuery}>Search</button>
     </div>
   )
