@@ -14,7 +14,7 @@ function App() {
     setError(null);
     // API request here 
     // https://api.npms.io/v2/search/suggestions?q=${queryString}
-    fetch(`https://api.npms.io/v2/search/suggestions?q=${queryString}`)
+    fetch(`https://api.npms.io/v2/search/suggestions?`)
         .then((res) => res.json())
         .then((result) => {
           setResults(result);
@@ -28,6 +28,7 @@ function App() {
 
   return (
     <>
+      <h1>npm search page</h1>
       <SearchBar searchQuery={searchQuery} setQueryString={setQueryString}/>
       {isLoading && <div>Loading...</div>}
       {error && <div>An error has occured. Please try again.</div>}
