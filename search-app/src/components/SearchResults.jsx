@@ -8,7 +8,7 @@ function SearchResults( {results} ) {
   if (!results || results.length === 0) return null;
   return (
     <div className='search-results-container'>
-      <h1>results</h1>
+      <h2>results</h2>
       {results.map((result) => <SearchResult result={result} />)}
     </div>
   )

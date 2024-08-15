@@ -1,8 +1,10 @@
 .search-result-container {
+    padding: 10px 0px;
     border-bottom: 1px solid gray;
 }
 
-.search-result-name {
+.search-result-name a {
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 700;
+    color: black;
 }
