@@ -2,6 +2,11 @@ import { useEffect, useState } from 'react';
 
 import './searchResult.css';
 
+/* 
+SearchResult
+displays individual search result
+displays name of package with link to NPM page and description
+*/
 function SearchResult( {result} ) {
   if (!result) return null;
   return (

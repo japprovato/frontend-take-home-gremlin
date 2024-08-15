@@ -3,6 +3,10 @@ import SearchResult from './SearchResult';
 
 import './searchResults.css';
 
+/* 
+SearchResult
+maps over each result in array from API to display via SearchResult component
+*/
 function SearchResults( {results} ) {
   if (!results || results.length === 0) return null;
   return (

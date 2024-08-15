@@ -7,15 +7,19 @@ import './App.css';
 const FAILING_API_REQUEST_URL = 'https://api.npms.io/v2/search/suggestions?';
 
 function App() {
+  // stores query from search bar text input
   const [queryString, setQueryString] = useState('');
+  // stores results from API request
   const [results, setResults] = useState([]);
+  // loading state
   const [isLoading, setIsLoading] = useState(false);
+  // error state
   const [error, setError] = useState(null);
-
   // use this variable to switch to 'failing' api state
   const [shouldFail, setShouldFail] = useState(false);
 
   const searchQuery = () => {
+    // reset loading and error states when new search starts
     setIsLoading(true);
     setError(null);
     // API request here 
