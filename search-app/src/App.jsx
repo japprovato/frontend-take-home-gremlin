@@ -1,11 +1,12 @@
-import { useState } from 'react'
-import SearchBar from './components/SearchBar'
-import './App.css'
+import { useState } from 'react';
+import SearchBar from './components/SearchBar';
+import SearchResults from './components/SearchResults';
+import './App.css';
 
 function App() {
   const [count, setCount] = useState(0);
   const [queryString, setQueryString] = useState('');
-  const [results, setResults] = useState({});
+  const [results, setResults] = useState([]);
 
   console.log('resutls: ' , results);
 
@@ -26,6 +27,7 @@ function App() {
   return (
     <>
       <SearchBar searchQuery={searchQuery} setQueryString={setQueryString}/>
+      {results && <SearchResults results={results} />}
     </>
   )
 }
