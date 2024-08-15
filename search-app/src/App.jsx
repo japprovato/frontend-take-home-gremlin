@@ -8,12 +8,14 @@ function App() {
   const [queryString, setQueryString] = useState('');
   const [results, setResults] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   console.log('resutls: ' , results);
 
   const searchQuery = () => {
     console.log('searchQuery...: ', queryString);
     setIsLoading(true);
+    setError(null);
     // API request here 
     // https://api.npms.io/v2/search/suggestions?q=${queryString}
     fetch(`https://api.npms.io/v2/search/suggestions?q=${queryString}`)
@@ -23,6 +25,7 @@ function App() {
         })
         .catch((error) => {
           console.log('error: ', error);
+          setError(error);
         })
         .finally(() => setIsLoading(false));
   };
@@ -31,6 +34,7 @@ function App() {
     <>
       <SearchBar searchQuery={searchQuery} setQueryString={setQueryString}/>
       {isLoading && <div>Loading...</div>}
+      {error && <div>An error has occured. Please try again.</div>}
       {results && <SearchResults results={results} />}
     </>
   )
